@@ -38,7 +38,13 @@ class MembershipController extends Controller
     public function store(StoreMembershipRequest $request)
     {
         //
-        dd($request->all());
+        Membership::create($request->all() );
+        if($request->is_entreprenuer){
+            $message = 'Your application to join Ralf Community has been received. We cherish your interest to join our community, a mail has been sent to you - kindly check and your inbox for further instructions and on-boarding';
+        }else{
+            $message = 'Your application to join Ralf Community has been received. We cherish your interest to join our community.';
+        }
+        return redirect()->route('memberships.reg_confirm')->with('message', $message);
     }
 
     /**
@@ -84,5 +90,9 @@ class MembershipController extends Controller
     public function destroy(Membership $membership)
     {
         //
+    }
+
+    public function regConfirm(){
+        return view('regconfirm');
     }
 }

@@ -34,7 +34,7 @@ return new class extends Migration
             $table->string('team_count')->nullable();
             $table->string('referer')->nullable();
             $table->string('why_join_community')->nullable();
-            $table->bolean('is_entreprenuer')->nullable();
+            $table->boolean('is_entreprenuer')->nullable();
             $table->timestamps();
         });
     }
