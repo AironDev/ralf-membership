@@ -27,7 +27,7 @@ class StoreMembershipRequest extends FormRequest
             
             'sur_name' => 'required',
             'other_names' => 'required',
-            'email' => 'required',
+            'email' => ['required','email','unique:memberships'],
             'phone' => 'required',
             'whatsapp' => 'required',
             'birth_date' => 'required',

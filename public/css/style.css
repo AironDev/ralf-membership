@@ -280,7 +280,7 @@ body {
   margin-bottom: 23px;
   position: relative; }
 
-input, select {
+input, select, textarea {
   display: block;
   width: 100%;
   border: 1px solid #ebebeb;
@@ -485,5 +485,14 @@ select {
   #reset {
     margin-right: 0px;
     margin-bottom: 10px; } }
+
+
+  .alert-warning{
+      background: #ff980021;
+      margin: 40px;
+      padding: 5px;
+      border-radius: 20px;
+      font-size: 18px;
+  }
 
 /*# sourceMappingURL=style.css.map */

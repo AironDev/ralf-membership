@@ -25,7 +25,7 @@
                 </div>
                 <div class="signup-form" id="style-4-scrollbar" style="max-height: 100vh; overflow-y: scroll;">
                     @if($errors->any() )
-                        <div class="alert alert-danger">
+                        <div class="alert alert-warning">
                             <ul>
                                 @foreach($errors->all() as $error)
                                     <li>{{$error}}</li>

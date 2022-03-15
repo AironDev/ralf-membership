@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Membership;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreMembershipRequest;
+use Mail;
+use App\Mail\MemberWelcomeEmail;
 
 class MembershipController extends Controller
-{
+{   
     /**
      * Display a listing of the resource.
      *
@@ -41,9 +43,11 @@ class MembershipController extends Controller
         Membership::create($request->all() );
         if($request->is_entreprenuer){
             $message = 'Your application to join Ralf Community has been received. We cherish your interest to join our community, a mail has been sent to you - kindly check and your inbox for further instructions and on-boarding';
+             Mail::to($request->email)->send(new MemberWelcomeEmail());
         }else{
             $message = 'Your application to join Ralf Community has been received. We cherish your interest to join our community.';
         }
+
         return redirect()->route('memberships.reg_confirm')->with('message', $message);
     }
 
@@ -93,6 +97,9 @@ class MembershipController extends Controller
     }
 
     public function regConfirm(){
+
+        // Mail::to('airondev@gmail.com')->send(new MemberWelcomeEmail());
+        // session()->put('message', 'Great! Successfully send in your mail');
         return view('regconfirm');
     }
 }
