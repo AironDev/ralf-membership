@@ -20,10 +20,8 @@
     <div class="main">
         <div class="container">
             <div class="signup-content">
-                <div class="signup-img">
-                    <img src="{{ asset('images/signup-img.jpg') }}" alt="">
-                </div>
-                <div class="signup-form" id="style-4-scrollbar" style="max-height: 100vh; overflow-y: scroll;">
+                <div class="signup-img"></div>
+                <div class="signup-form" id="style-4-scrollbar">
                     @if($errors->any() )
                         <div class="alert alert-warning">
                             <ul>

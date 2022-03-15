@@ -41,7 +41,6 @@
         <div class="container">
             <div class="signup-content">
                 <div class="signup-img">
-                    <img src="{{ asset('images/signup-img.jpg') }}" alt="">
                 </div>
                 <div class="signup-form" id="style-4-scrollbar" style="max-height: 100vh; overflow-y: scroll;">
                     @if($errors->any() )
